@@ -1,0 +1,94 @@
+<div class="card mb-3">
+  <div class="card card-body bg-success text-white py-5">
+    <h2>{{ Header }}</h2>
+    <p class="lead">.NET Developer with <b class="text-warning">12+ years of experience</b> in software development, architecture and database design and team management. A self-taught and self-motivated IT person, looking for new avenues and role to work for organization and self.</p>
+  </div>
+
+  <div>
+    <ul class="list-group mt-3">
+      <li 
+        (click)="itemClicked('summary')"
+        class="bg-success list-group-item font-weight-bold text-white"
+        role="button">
+        Professional Summary
+      </li>
+      <li 
+        [hidden]="!visibilityHolder['summary']"
+        class="list-group-item list-group-item-success">
+        <ul>
+          <li class="content">Experience in Software development and project delivery in Education, Medical, Enterprise, Human Resource Management and Travel domain</li>
+          <li class="content">Experience in Development, Team Management, Structured Analysis and Design, and
+            <ul>
+              <li class="content">Microsoft Technologies – C#, ASP.Net, MVC, Entity Framework</li>
+              <li class="content">Front-End Technologies – Angular, TypeScript, jQuery</li>
+              <li class="content">Persistent Data Storage – SQL Server, HanaDB</li>
+              <li class="content">Markup Language and Styling – HTML5, XML, CSS4, Bootstrap</li>
+              <li class="content">Code Management – SVN, TFS, Stash/Bitbucket, JIRA, GitHub, Agile Methodology</li>
+            </ul>
+          </li>
+          <li class="content">Quick learner with sharp learning curve</li>
+          <li class="content">Extensive experience in Team Management and translating requirements to technical design</li>
+        </ul>
+      </li>
+    </ul>
+
+    <ul class="list-group mt-3">
+      <li
+      (click)="itemClicked('experience')"
+        class="bg-warning list-group-item font-weight-bold text-white"
+        role="button">
+        Professional Experience
+      </li>
+      <li 
+        [hidden]="!visibilityHolder['experience']"
+        class="list-group-item list-group-item-warning">
+        <ul>
+          <li class="content">Currently working as Team Lead at A-1 Technology</li>
+          <li class="content">Worked as Software Developer in vCustomer and RAMPGreen – a sister concern of vCustomer</li>
+          <li class="content">Worked as Software Developer in Sangarmaal SoftTech</li>
+        </ul>
+      </li>
+    </ul>
+
+    <ul class="list-group mt-3">
+      <li
+      (click)="itemClicked('mention')"
+        class="bg-danger list-group-item font-weight-bold text-white"
+        role="button">
+        Special Mention
+      </li>
+      <li 
+        [hidden]="!visibilityHolder['mention']"
+        class="list-group-item list-group-item-danger">
+        <ul>
+          <li class="content">Experience in .Net Indentiy Framework</li>
+          <li class="content">Experience in SOLID Principles and Design Patterns</li>
+          <li class="content">Good knowledge of Dependency Injections Container and experience in DI implemenation</li>
+          <li class="content">Experience in Test-Driven Development</li>
+        </ul>
+      </li>
+    </ul>
+
+    <ul class="list-group mt-3">
+      <li 
+        (click)="itemClicked('certification')"
+        class="bg-primary list-group-item font-weight-bold text-white"
+        role="button">
+        Certifications
+      </li>
+      <li 
+        [hidden]="!visibilityHolder['certification']"
+        class="list-group-item list-group-item-primary content">
+        Completed Udemy courses and certified in –
+    <ul>
+      <li class="content">Entity Framework in Depth</li>
+      <li class="content">RESTful API with ASP.NET Core Web API</li>
+      <li class="content">Angular - The Complete Guide (2020 Edition)</li>
+      <li class="content">Understanding TypeScript - 2020 Edition</li>
+      <li class="content">RxJs 6 In Practice</li>
+    </ul>
+      </li>
+    </ul>
+  </div>
+
+</div>

@@ -1,0 +1,52 @@
+<div class="card mb-3">
+  <div class="card card-body bg-warning text-white py-5">
+    <h2>{{ Header }}</h2>
+    <p class="lead"> {{ Details }}</p>
+  </div>
+  <div>
+    <div name="skillset" *ngFor="let skillset of skillSets; let i = index">
+        <div class="mt-3" *ngIf="skillset.visible">
+          
+          <ul class="list-group">
+            <li
+              [ngClass]="{
+                'bg-warning': i % 4 == 0,
+                'bg-danger': i % 4 == 1,
+                'bg-primary': i % 4 == 2, 
+                'bg-success': i % 4 == 3
+              }" 
+              class="list-group-item font-weight-bold text-white" role="button"
+              (click)="headerClicked(i)">                  
+                {{ skillset.key }}
+              </li>
+            <div [hidden]= "showIndex != i">
+              <li 
+              [ngClass]="{
+                'border-warning': i % 4 == 0,
+                'border-danger': i % 4 == 1,
+                'border-primary': i % 4 == 2, 
+                'border-success': i % 4 == 3
+              }"
+              class="list-group-item list-group-item-action" 
+              *ngFor="let skill of skillset.value; let isLast = last">
+              <a
+              [ngClass]="{
+                'text-warning': i % 4 == 0,
+                'text-danger': i % 4 == 1,
+                'text-primary': i % 4 == 2, 
+                'text-success': i % 4 == 3
+              }"
+                [ngStyle]="{cursor: skill.url != ''? 'pointer' : ''}" 
+                class="text-decoration-none text-dark" 
+                [attr.href]="skill.url !== '' ? skill.url : null"
+                target="_blank">{{skill.key}}</a>
+            </li>
+            </div>
+          </ul>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+    

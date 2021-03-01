@@ -1,0 +1,64 @@
+<div class="card mb-3">
+  <div class="card card-body bg-danger text-white py-5">
+    <h2>{{ Header }}</h2>
+    <p class="lead"> {{ Details }}</p>
+  </div>
+    
+  <div
+    [ngClass]="{
+      'border-danger': i % 4 == 0,
+      'border-primary': i % 4 == 1, 
+      'border-success': i % 4 == 2, 
+      'border-warning': i % 4 == 3
+    }" 
+    *ngFor="let project of Projects; let i = index"
+    class="card mt-3" 
+    role="button"
+    (click)="projectSelected(i)">
+    <div 
+    [ngClass]="{
+      'bg-danger': i % 4 == 0,
+      'bg-primary': i % 4 == 1, 
+      'bg-success': i % 4 == 2, 
+      'bg-warning': i % 4 == 3
+    }" 
+      class="card-header font-weight-bold text-white">
+      {{ project.Title }}
+    </div>
+    <div 
+      [hidden]="visibilityHolder[i]"
+      class="card-body pb-0">
+      <h5 class="card-title">{{ project.Role }}</h5>
+      <p class="card-text text-muted">{{ project.Details }}
+      </p>
+      <div class="row mb-1">
+        <div 
+          [ngClass]="{
+            'border-danger': i % 4 == 0,
+            'border-primary': i % 4 == 1, 
+            'border-success': i % 4 == 2, 
+            'border-warning': i % 4 == 3
+          }" 
+          class="card col-md-6 pt-3 mb-1">
+          <div class="card-title font-weight-bold">Responsibilities</div>
+          <ul class="pl-3 ">
+            <li *ngFor="let responsibility of project.Responsibilities">{{ responsibility.Value }}</li>
+          </ul>
+        </div>
+        <div 
+          [ngClass]="{
+            'border-danger': i % 4 == 0,
+            'border-primary': i % 4 == 1, 
+            'border-success': i % 4 == 2, 
+            'border-warning': i % 4 == 3
+          }" 
+          class=" card col-md-6 mb-1 pt-3">
+          <div class="card-title font-weight-bold">Technologies Used</div>
+          <ul class="pl-3">
+            <li *ngFor="let technology of project.Technologies">{{ technology.Value }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
